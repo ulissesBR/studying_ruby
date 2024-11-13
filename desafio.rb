@@ -7,6 +7,6 @@ print"Digite o seu sobrenome: "
 sobrenome = gets.chomp
 
 print"Digite a sua idade: "
-idade = gets.chomp.to_i()
+idade = gets.chomp.to_i
 
 puts "Nome: #{nome}; Sobrenome: #{sobrenome}; Idade #{idade}"
