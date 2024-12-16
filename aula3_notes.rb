@@ -1,39 +1,78 @@
-# aula 2 notes - Tudo é objeto
-42.class
-# irb> integer
+# aula 3 notes - tipos de dados
+puts 'Olá'
+# retorno: Olá
+puts 'Olá'.class
+# retorno: String
+puts 1.class
+# retorno: int
+puts 4.35.class
+# retorno: Float
+puts 1 + 4.35
+# retorno: 5.35
+# puts '1' + 1
+# retorno: Erro. Quebra o código.
+puts true.class
+# retorno: TrueClass
+puts false.class
+# retorno: FalseClass
+puts Time.now
+# retorno: Data e hora atuais
+a = Time.new
+puts a
+# retorno: data e hora no contexto atual
 
-'34'.to_i
-# irb> 34
+# symbol:
+puts :name
+# Mais usado para chaves. É tipo uma string.
+# O nome não pode começar com número.
 
-# Conceitos básicos necessários:
-# OO:
-#   - Classes (declaração)
-#   - métodos
-#   - herança
+# No Ruby não existe o tipo Nulo.
+# Porém existe o tipo nil:
+puts nil
+# retorno: nil
 
-class Car
-  def initialize(color, model)
-    @color = color
-    @model = model
-  end
-
-  attr_accessor :color, :model
-
-  def description
-    "A #{color} #{model}"
-  end
+# range de valores (INCLUSIVO, por ter dois pontos .. )
+range = 1..10
+puts range
+# retorno:
+# 1..10
+range.each do |number|
+  puts number
 end
+# retorno:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
 
-carro = Car.new 'red', 'Chevrolet'
-puts carro.description
+puts range.include? 15
+# retorno: false
 
-# Herança:
-class ElectricCar < Car
-  def battery_life
-    '250 km'
-  end
-end
+puts range.include? 5
+# retorno: true
 
-tesla = ElectricCar.new('gray', 'Tesla')
-puts tesla.description
-puts tesla.battery_life
+# range NÃO INCLUSIVO, declarando com três pontos entre os valores (não inclui o 10):
+range_nao_inclusivo = 1...10
+puts(range_nao_inclusivo.to_a)
+# retorno:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+
+# hash (dicionário): chave-valor
+{ name: 'Jão', 'age' => 8000 }
+
+# array:
+[1, 2, 3, 4]
